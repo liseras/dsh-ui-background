@@ -1,0 +1,23 @@
+{
+  "name": "dsh-ui-background",
+  "version": "1.0.0",
+  "private": true,
+  "description": "自定义背景插件：为 Harness Web UI 添加背景图/背景色，并可调节不透明度与模糊",
+  "meta": {
+    "title": "自定义背景",
+    "description": "为界面添加背景图片或纯色背景，并调节不透明度与模糊程度。"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-settings"]
+    }
+  }
+}
